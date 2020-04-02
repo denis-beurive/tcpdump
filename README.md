@@ -1,9 +1,11 @@
 # TCPDUMP notes
 
-Preparation:
+## Preparation
 
 	export host_A=<IP of host A>
 	export host_B=<IP of host B>
+
+## Filters
 
 Capture all traffic emitted from host `A` in destinations to host `B`, through the interface `ens33`.
 
@@ -40,7 +42,7 @@ OK, but I'd like to see the payload!
         src host ${host_A} and \
         dst host ${host_B}
 
-How do we see the TCP connections ?
+## Catching TCP connections ?
 
 See [this document](https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Connection_establishment)
 
@@ -48,6 +50,7 @@ See [this document](https://en.wikipedia.org/wiki/Transmission_Control_Protocol#
 > * `SYN-ACK`: In response, the server replies with a SYN-ACK. The acknowledgment number is set to one more than the received sequence number i.e. A+1, and the sequence number that the server chooses for the packet is another random number, B.
 > * `ACK`: Finally, the client sends an ACK back to the server. The sequence number is set to the received acknowledgement value i.e. A+1, and the acknowledgement number is set to one more than the received sequence number i.e. B+1.
 
+Command:
 
 
 	tcpdump -i ens33 \
