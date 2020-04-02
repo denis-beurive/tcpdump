@@ -34,6 +34,8 @@ OK, but I'd like to see the payload!
 * `-s 0`: Setting snaplen to 0 sets it to the default of 262144.
 * `-A`: Print each packet (minus its link level header) in ASCII. Handy for capturing web pages. 
 
+Command:
+
 	tcpdump -i ens33 \
         -s 0 \
         -A \
