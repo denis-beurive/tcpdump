@@ -7,6 +7,15 @@
 
 ## Filters
 
+Capture all traffic between host `A` and host `B`, through the interface `ens33`.
+
+	tcpdump -i ens33 host ${host_A} and host ${host_B}
+
+Capture all traffic between host `A` and host `B`, on ports 5000 or 5001, through the interface `ens33`.
+
+	tcpdump -i ens33 host ${host_A} and host ${host_B} \
+		port 5000 or 5001
+
 Capture all traffic emitted from host `A` in destinations to host `B`, through the interface `ens33`.
 
 	tcpdump -i ens33 src host ${host_A} and dst host ${host_B}
@@ -43,6 +52,10 @@ Command:
         dst port 5001 and \
         src host ${host_A} and \
         dst host ${host_B}
+
+
+
+
 
 ## Catching TCP connections ?
 
